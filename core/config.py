@@ -5,7 +5,6 @@ env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
 
 
-
 class Settings:
     PROJECT_NAME: str = "SmartHome"
     PROJECT_VERSION: str = "1.0.0"
@@ -18,4 +17,6 @@ class Settings:
     DATABASE_URL = (f"postgresql://{POSTGRES_USER}:"
                     f"{POSTGRES_PASSWORD}@{POSTGRES_SERVER}:"
                     f"{POSTGRES_PORT}/{POSTGRES_DB}")
+
+
 settings = Settings()
