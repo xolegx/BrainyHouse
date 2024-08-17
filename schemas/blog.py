@@ -18,7 +18,7 @@ class CreateBlog(BaseModel):
 class ShowBlog(BaseModel):
     title: str
     content: Optional[str]
-    created_at: date
+    created_id: date
 
-    class Config():
+    class Config:
         orm_mode = True
