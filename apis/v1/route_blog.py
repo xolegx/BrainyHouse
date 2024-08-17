@@ -11,3 +11,5 @@ router = APIRouter()
 async def create_blog(blog: CreateBlog, db: Session = Depends(get_db)):
     blog = create_new_blog(blog=blog, db=db, author_id=1)
     return blog
+
+
