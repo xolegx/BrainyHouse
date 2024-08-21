@@ -30,3 +30,12 @@ def retreive_blog(id: int, db: Session):
 def list_blogs(db: Session):
     blogs = db.query(Blog).filter(Blog.is_active is True).all()
     return blogs
+
+
+def delete_blog(id: int, author_id: int, db: Session):
+    blog_in_db = db.query(Blog).filter(Blog.id == id)
+    if not blog_in_db.first():
+        return {"error": f"Cloud not find blog with id {id}"}
+    blog_in_db.delete()
+    db.commit()
+    return {"mdg": f"deleted blog with id {id}"}

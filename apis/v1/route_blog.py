@@ -2,7 +2,8 @@ from fastapi import APIRouter, Depends, status, HTTPException
 from sqlalchemy.orm import Session
 from schemas.blog import CreateBlog, ShowBlog, UpdateBlog
 from db.session import get_db
-from db.repository.blog import create_new_blog, retreive_blog, list_blogs, update_blog
+from db.repository.blog import create_new_blog, retreive_blog, list_blogs, \
+    update_blog, delete_blog
 
 router = APIRouter()
 
@@ -36,3 +37,12 @@ def get_blog(id: int, db: Session = Depends(get_db)):
 def get_all_blogs(db: Session = Depends(get_db)):
     blogs = list_blogs(db=db)
     return blogs
+
+
+@router.delete("/delete/{id}")
+def delete_a_blog(id: int, db: Session = Depends(get_db)):
+    messege = delete_blog(id=id, author_id=1, db=db)
+    if messege.get('error'):
+        raise HTTPException(detail=messege.get('error'),
+                            status_code=status.HTTP_400_BAD_REQUEST)
+    return {"msg": f"Successfully deleted blog with id {id}"}
