@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainy house</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">BH</div>
+        <div class="time"id="time"></div>
+        <div class="calendar" onclick="toggleCalendar()">
+            <div class="calendar-header calendar-month" id="month"></div>
+            <div class="calendar-body">
+                <div class="calendar-weekday" id="weekday"></div>
+                <div class="calendar-day" id="day"></div>
+                <div class="calendar-year" id="year"></div>
+            </div>
+        </div>
+        <div class="calendar_" id="calendar_">
+          <header class="calendar__header">
+            <div class="calendar__month"></div>
+            <div class="calendar__year"></div>
+          </header>
+          <div class="calendar__grid">
+            <div class="calendar__day-names">
+              <span class="calendar__day-name">Пн</span>
+              <span class="calendar__day-name">Вт</span>
+              <span class="calendar__day-name">Ср</span>
+              <span class="calendar__day-name">Чт</span>
+              <span class="calendar__day-name">Пт</span>
+              <span class="calendar__day-name">Сб</span>
+              <span class="calendar__day-name">Вс</span>
+            </div>
+            <div class="calendar__day-numbers"></div>
+          </div>
+        </div>
+        <div class="door_in">
+            Дверь
+        </div>
+        <div class="door_out">
+            Подъезд
+        </div>
+        <div class="systems_state">
+            Норма
+        </div>
+        <div class="weather_block">
+            <div class="weather">
+                20°C<br><div class="weather_text">Температура</div>
+            </div>
+            <div class="weather">
+                50%<br><div class="weather_text">Влажность</div>
+            </div>
+            <div class="weather">
+                760 мм<br><div class="weather_text">Давление</div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <aside class="sidebar-left">
+            <div class="rooms">
+                <label>Комнаты</label>
+                <button class="button">Кухня</button>
+                <button class="button">Спальня</button>
+                <button class="button">Детская</button>
+                <button class="button">Ванная</button>
+                <button class="button">Прачечная</button>
+            </div>
+            <div class="others">
+                <label>Системы</label>
+                <button class="button">Вода</button>
+                <button class="button">Камеры</button>
+                <button class="button">Музыка</button>
+                <button class="button">Климат</button>
+                <button class="button">Освещение</button>
+            </div>
+        </aside>
+        <section class="content">
+            <div class="apartment-plan">
+                <p>План</p>
+                <!-- Здесь можно вставить изображение чертежа -->
+            </div>
+            <div class="player">
+                <button class="button_" id="prev-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M6 6h2v12H6V6zm3.5 6l8.5 6V6l-8.5 6z"/>
+                    </svg>
+                </button>
+                <button class="button_" id="play-pause-btn">
+                    <svg id="play-icon" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    <svg id="pause-icon" viewBox="0 0 24 24" style="display: none;">
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                    </svg>
+                </button>
+                <button class="button_" id="next-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 6h-2v12h2V6zm-3.5 6l-8.5 6V6l8.5 6z"/>
+                    </svg>
+                </button>
+                <div class="button_" id="volume-control">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                    </svg>
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+                </div>
+            </div>
+        </section>
+        <aside class="sidebar-right">
+            
+        </aside>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
